@@ -243,11 +243,13 @@
 
 
     <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.fileAsset.js/etc/designs/zg/mse/desktop/js/head/head.v0-0-7.js"></script>
+    <script type="text/javascript" src="etc/designs/zg/mse/desktop/js.asset.js/core/libs-head.js"></script>
 
 
 
 <script>
-
+    !function(i){"use strict";var t={},r={},s={},u={edit:".cq-wcm-edit, .cq-wcm-edit-touch"};s.isEdit=function(){return void 0===r.isEdit&&(r.isEdit=i("body").is(u.edit)),r.isEdit},s.isAuthor=function(){return void 0===r.isAuthor&&(r.isAuthor=window.Granite&&window.Granite.author),r.isAuthor},s.isPublish=function(){return!s.isAuthor()},Cog.registerStatic({name:"utils.status",api:t,sharedApi:s})}(Cog.jQuery());
+function _classCallCheck(t,n){if(!(t instanceof n))throw new TypeError("Cannot call a class as a function")}!function(){var t={},n={skipToContentSnippet:".skip-to-content",skipToContentFocus:"skip-to-content--focus",skipToContentText:".top-nav-v2-skip-to-content",contentContainer:".container-fluid",classStateSkipVisible:"skip-to-content--visible",classStateSkipPresent:"skip-to-content--present",footer:"#footer"},o=function(){function t(n,o){_classCallCheck(this,t),this.$scope=n,this.status=o,this.bindUIElements(),this.ifSkipToContent()&&(this.watchWindowResize(),this.watchFocus())}return t.prototype.bindUIElements=function(){this.$skipToContentSnippet=this.$scope,this.$skipToContentText=this.$skipToContentSnippet.find(n.skipToContentText),this.$skipToContentLink=this.$skipToContentText.find("a"),this.$contentContainer=$(n.contentContainer),this.$footer=$(n.footer)},t.prototype.ifSkipToContent=function(){return this.$skipToContentSnippet},t.prototype.prepareContent=function(t){this.$contentContainer.addClass(n.classStateSkipPresent).css("top",t),this.$skipToContentSnippet.css("display","block"),this.$footer.css("margin-bottom",t)},t.prototype.watchWindowResize=function(){var t=this;$(window).resize(function(){var n=t.$scope.innerHeight();t.$skipToContentLink.is(":focus")||t.$contentContainer.position().top===n?t.$skipToContentLink.is(":focus")&&"0"!==t.$contentContainer.position().top&&t.$contentContainer.css("top","0px"):t.$contentContainer.css("top","-"+n+"px")})},t.prototype.watchFocus=function(){var t=this;this.prepareContent("-"+this.$scope.innerHeight()+"px"),this.$skipToContentLink.on("focus",function(){t.$skipToContentSnippet.addClass(n.skipToContentFocus),t.$contentContainer.addClass(n.classStateSkipVisible),t.$contentContainer.css("top","0px")}),this.$skipToContentLink.on("focusout",function(){t.$skipToContentSnippet.removeClass(n.skipToContentFocus),t.$contentContainer.removeClass(n.classStateSkipVisible),t.$contentContainer.css("top","-"+t.$scope.innerHeight()+"px")})},t}();t.onRegister=function(t){new o(t.$scope,this.external.status)},Cog.registerComponent({name:"skipToContent",api:t,selector:".skip-to-content",requires:[{name:"utils.status",apiId:"status"}]})}();
 </script>
 
 
@@ -5682,8 +5684,7 @@ links.forEach((link) => {
 </script>
 
 
-    <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.asset.js/core/libs1.js"></script>
-    <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.asset.js/core/libs.js"></script>
+    <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.asset.js/core/libs2.js"></script>
     <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.asset.js/core/design.default.bootstrap.v0-0-7.js"></script>
 
 
