@@ -276,7 +276,7 @@
 
 </script>
 
-<script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.fileAsset.js/etc/designs/zg/mse/desktop/js/head/head.v0-0-7.js"></script>
+<script defer type="text/javascript" src="/etc/designs/zg/mse/desktop/js.fileAsset.js/etc/designs/zg/mse/desktop/js/head/head.v0-0-7.js"></script>
 
 
 
@@ -1294,14 +1294,12 @@
  <div class="component-content">
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
   <script>
-      window.addEventListener('load', function() {
           window.OneSignal = window.OneSignal || [];
           OneSignal.push(function() {
               OneSignal.init({
                   appId: "78b9991a-7157-442c-b7b1-8e58d3a1639c",
               });
           });
-      });
 </script>
   <div class="notification-popup">
    <div class="mse-notification-bell_container">
@@ -2955,7 +2953,7 @@
       <div class="parametrizedhtml component section default-style odd last col-xs-12 analytics-parametrizedhtml reference-coronavirus-box">
           <div class="component-content">
               <script type="text/javascript">
-                  window.addEventListener('DOMContentLoaded', function() {
+                  window.addEventListener('load', function() {
                       (function($) {
                           var promoHelpBox = window.$(".mse-help-promo-box .promobox-content");
                           var links = [];
