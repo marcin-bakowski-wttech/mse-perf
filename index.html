@@ -2933,8 +2933,12 @@
                 <div class="parametrizedhtml component section default-style odd last col-xs-12 analytics-parametrizedhtml reference-coronavirus-box">
                     <div class="component-content">
                         <script type="text/javascript">
+                            window.addEventListener('load', function() {
+                                consoe.log("LOAD!!!");
+                            });
                             window.addEventListener('DOMContentLoaded', function() {
                                 (function($) {
+                                    console.log("DOMCOntentLoaded!!!!");
                                     var promoHelpBox = window.$(".mse-help-promo-box .promobox-content");
                                     var links = [];
 
