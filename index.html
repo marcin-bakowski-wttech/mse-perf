@@ -2964,11 +2964,9 @@
 
 
                                     links.forEach((link) => {
-                                        var s = "";
                                         if(link.title && link.url) {
-                                            s += "<a class='mse-help-promo-link' href='"+link.url+"'>"+link.title+"</a>";
+                                            promoHelpBox.append("<a class='mse-help-promo-link' href='"+link.url+"'>"+link.title+"</a>");
                                         }
-                                        promoHelpBox.append(s);
                                     });
 
 
