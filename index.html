@@ -5800,7 +5800,8 @@
     window.addEventListener('load', function() {
         setTimeout(function(){
             var s = document.createElement('script');
-            var fS = document.getElementsByTagName('script')[0];
+            var sArray = document.getElementsByTagName('script');
+            var lS = sArray[sArray.length - 1];
             s.src = '/cookie-consent-v2/msmCookieConsent.js';
             fS.parentNode.insertBefore(s, fS); }, 500);
     });
