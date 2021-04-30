@@ -241,18 +241,6 @@
 
 
 
-    <script>
-        window.addEventListener('load', function() {
-            setTimeout(function(){
-                var s = document.createElement('script');
-                var fS = document.getElementsByTagName('script')[0];
-                s.src = '/cookie-consent-v2/msmCookieConsent.js';
-                fS.parentNode.insertBefore(s, fS); }, 500);
-        });
-    </script>
-
-
-
 
     <script defer="defer" nomodule src="/cookie-consent-v2/msmCookieConsent.legacy.js"></script>
 
@@ -5805,6 +5793,18 @@
 
 
 
+
+
+
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function(){
+            var s = document.createElement('script');
+            var fS = document.getElementsByTagName('script')[0];
+            s.src = '/cookie-consent-v2/msmCookieConsent.js';
+            fS.parentNode.insertBefore(s, fS); }, 500);
+    });
+</script>
 
 
 
