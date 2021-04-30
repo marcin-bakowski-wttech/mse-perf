@@ -243,10 +243,11 @@
 
     <script>
         window.addEventListener('load', function() {
-          var s = document.createElement('script');
-          var fS = document.getElementsByTagName('script')[0];
-          s.src = '/cookie-consent-v2/msmCookieConsent.js';
-          fS.parentNode.insertBefore(s, fS);
+            setTimeout(function(){
+                var s = document.createElement('script');
+                var fS = document.getElementsByTagName('script')[0];
+                s.src = '/cookie-consent-v2/msmCookieConsent.js';
+                fS.parentNode.insertBefore(s, fS); }, 500);
         });
     </script>
 
