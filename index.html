@@ -250,6 +250,43 @@
 
 
 
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+
+            return (
+                element.offsetParent !== null &&
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var visiblePics = [...document.querySelectorAll('picture')].filter(p => p.offsetParent !== null);
+
+            for (var i = 0; i < visiblePics.length; i++) {
+                if (isInViewport(visiblePics[i])) {
+                    [...visiblePics[i].children].filter(c => c.hasAttribute("data-src")).forEach(c => {
+                        c.setAttribute("src", c.getAttribute("data-src"));
+                        c.removeAttribute("data-src");
+                        c.classList.remove("lazyload");
+                        c.classList.add("lazyloaded");
+                    });
+                    [...visiblePics[i].children].filter(c => c.hasAttribute("data-srcset")).forEach(c => {
+                        c.setAttribute("srcset", c.getAttribute("data-srcset"));
+                        c.removeAttribute("data-srcset")
+                    });
+                } else {
+                    break;
+                }
+            }
+        });
+
+
+    </script>
+
 
 
 
@@ -5751,40 +5788,6 @@
 
 </div>
 
-
-<script>
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-
-        return (
-            element.offsetParent !== null &&
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    var visiblePics = [...document.querySelectorAll('picture')].filter(p => p.offsetParent !== null);
-
-    for (var i = 0; i < visiblePics.length; i++) {
-        if (isInViewport(visiblePics[i])) {
-            [...visiblePics[i].children].filter(c => c.hasAttribute("data-src")).forEach(c => {
-                c.setAttribute("src", c.getAttribute("data-src"));
-                c.removeAttribute("data-src");
-                c.classList.remove("lazyload");
-                c.classList.add("lazyloaded");
-            });
-            [...visiblePics[i].children].filter(c => c.hasAttribute("data-srcset")).forEach(c => {
-                c.setAttribute("srcset", c.getAttribute("data-srcset"));
-                c.removeAttribute("data-srcset")
-            });
-        } else {
-            break;
-        }
-    }
-
-</script>
 
 <script type="text/javascript" src="/etc/designs/zg/mse/desktop/js.asset.js/core/design.default.bootstrap.v0-101-400.js"></script>
 
